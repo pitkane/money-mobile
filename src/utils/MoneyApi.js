@@ -35,7 +35,6 @@ class MoneyApi {
 
   async fetchTransactions() {
     try {
-      console.log("Yep");
       const { data } = await axios.get("/transactions");
       return data.transactions;
     } catch (err) {

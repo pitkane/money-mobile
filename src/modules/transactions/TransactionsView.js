@@ -3,7 +3,7 @@ import { Button, View, StyleSheet, Text } from "react-native";
 const { func } = React.PropTypes;
 
 import { MoneyApi } from "../../utils/MoneyApi";
-// import Icon from "react-native-vector-icons/MaterialIcons";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 const moneyApi = new MoneyApi();
 
@@ -45,6 +45,10 @@ class TransactionsView extends Component {
           title="Navigate to ViewSingleTransaction"
           onPress={this.buttonPress}
         />
+
+        {this.state.transactions.map((transaction, i) => {
+          return <Text key={i}>{transaction.memo}</Text>;
+        })}
       </View>
     );
   }

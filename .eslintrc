@@ -5,11 +5,21 @@
     "node": true,
     "jest": true
   },
-  "ecmaFeatures": {
-    "jsx": true,
-    "restParams": true,
-    "spread": true
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "restParams": true,
+      "spread": true,
+      "experimentalObjectRestSpread": true
+    },
+    "ecmaVersion": 7,
+    "sourceType": "module"
   },
+  // "ecmaFeatures": {
+  // 
+  // 
+  // 
+  // },
   "extends": "eslint:recommended",
   "plugins": [
     "babel",
@@ -17,6 +27,9 @@
     "prettier"
   ],
   "rules": {
-    "no-console": "off"
+    "no-console": "off",
+    "react/jsx-uses-vars": [
+      2
+    ]
   }
 }
