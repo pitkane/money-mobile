@@ -9,18 +9,11 @@ const color = () => Math.floor(255 * Math.random());
  * Sample view to demonstrate StackNavigator
  * @TODO remove this module in a live application.
  */
-class ColorView extends Component {
-  static displayName = "ColorView";
+class SingleTransactionView extends Component {
+  // static displayName = "ColorView";
 
   static navigationOptions = {
-    title: "Colors!",
-    tabBar: {
-      label: "Colors!",
-      icon: props => (
-        <Icon name="color-lens" size={24} color={props.tintColor} />
-      )
-    },
-    // TODO: move this into global config?
+    title: "Single Transaction",
     header: {
       tintColor: "white",
       style: {
@@ -36,7 +29,7 @@ class ColorView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      background: `rgba(${color()},${color()},${color()}, 1)`
+      // background: `rgba(${color()},${color()},${color()}, 1)`
     };
   }
 
@@ -45,12 +38,9 @@ class ColorView extends Component {
   };
 
   render() {
-    const buttonText = "Open in Stack Navigator";
     return (
-      <View
-        style={[styles.container, { backgroundColor: this.state.background }]}
-      >
-        <Button color="#ee7f06" title={buttonText} onPress={this.open} />
+      <View style={[styles.container]}>
+        <Button title="SingleTransactionView" onPress={this.open} />
       </View>
     );
   }
@@ -64,4 +54,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ColorView;
+export default SingleTransactionView;

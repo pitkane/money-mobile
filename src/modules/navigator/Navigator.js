@@ -3,15 +3,20 @@ import { TabNavigator, StackNavigator } from "react-navigation";
 
 import CounterViewContainer from "../counter/CounterViewContainer";
 import ColorViewContainer from "../colors/ColorViewContainer";
+import TransactionsViewContainer
+  from "../transactions/TransactionsViewContainer";
+import SingleTransactionViewContainer
+  from "../transactions/SingleTransactionViewContainer";
 
 const headerColor = "#39babd";
 const activeColor = "white";
 
 // TabNavigator is nested inside StackNavigator
-export const MainScreenNavigator = TabNavigator(
+export const MainScreen = TabNavigator(
   {
     Counter: { screen: CounterViewContainer },
-    Color: { screen: ColorViewContainer }
+    Color: { screen: ColorViewContainer },
+    Transactions: { screen: TransactionsViewContainer }
   },
   {
     tabBarOptions: {
@@ -26,8 +31,8 @@ export const MainScreenNavigator = TabNavigator(
   }
 );
 
-MainScreenNavigator.navigationOptions = {
-  title: "Money Main Screen",
+MainScreen.navigationOptions = {
+  // title: "MainScreen Title",
   header: {
     titleStyle: { color: "white" },
     style: {
@@ -39,8 +44,9 @@ MainScreenNavigator.navigationOptions = {
 
 // Root navigator is a StackNavigator
 const AppNavigator = StackNavigator({
-  Home: { screen: MainScreenNavigator },
-  InfiniteColorStack: { screen: ColorViewContainer }
+  Home: { screen: MainScreen },
+  InfiniteColorStack: { screen: ColorViewContainer },
+  SingleTransactionView: { screen: SingleTransactionViewContainer }
 });
 
 export default AppNavigator;

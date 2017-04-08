@@ -1,31 +1,32 @@
-import React, {PropTypes, Component} from 'react';
-import {addNavigationHelpers} from 'react-navigation';
+import React, { PropTypes, Component } from "react";
+import { addNavigationHelpers } from "react-navigation";
+const { number, string, func } = React.PropTypes;
 
-import AppNavigator from './Navigator';
+import AppNavigator from "./Navigator";
 
 class NavigatorView extends Component {
-  static displayName = 'NavigationView';
+  static displayName = "NavigationView";
 
   static propTypes = {
-    dispatch: PropTypes.func.isRequired,
+    dispatch: func,
     navigatorState: PropTypes.shape({
-      index: PropTypes.number.isRequired,
-      routes: PropTypes.arrayOf(PropTypes.shape({
-        key: PropTypes.string.isRequired,
-        routeName: PropTypes.string.isRequired
-      }))
+      index: number,
+      routes: PropTypes.arrayOf(
+        PropTypes.shape({
+          key: string,
+          routeName: string
+        })
+      )
     }).isRequired
   };
 
   render() {
     return (
       <AppNavigator
-        navigation={
-          addNavigationHelpers({
-            dispatch: this.props.dispatch,
-            state: this.props.navigatorState
-          })
-        }
+        navigation={addNavigationHelpers({
+          dispatch: this.props.dispatch,
+          state: this.props.navigatorState
+        })}
       />
     );
   }
