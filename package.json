@@ -1,20 +1,18 @@
 {
-  "name": "Money",
-  "author": "Futurice",
-  "description": "React Native App Starter Kit for Android and iOS",
+  "name": "money",
+  "author": "Mikko Pitkänen <mikko@mbit.fi>",
+  "description": "money-mobile",
   "license": "MIT",
-  "homepage": "http://getpepperoni.com",
-  "bugs": "https://github.com/futurice/pepperoni-app-kit/issues",
+  "homepage": "",
+  "bugs": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/futurice/pepperoni-app-kit"
+    "url": "https://github.com/pitkane/money-mobile"
   },
   "keywords": [
     "React Native",
-    "Starter Kit",
-    "Bitrise",
     "Redux",
-    "Auth0"
+    "Mbit"
   ],
   "version": "1.0.0",
   "private": false,
@@ -29,12 +27,15 @@
   },
   "jest": {
     "preset": "react-native",
-    "setupFiles": ["<rootDir>/test/setup.js"],
+    "setupFiles": [
+      "<rootDir>/test/setup.js"
+    ],
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native|react-navigation)"
     ]
   },
   "dependencies": {
+    "axios": "^0.16.0",
     "bluebird": "^3.3.5",
     "event-emitter": "^0.3.4",
     "immutable": "^3.7.6",
@@ -64,10 +65,12 @@
     "enzyme": "^2.2.0",
     "eslint": "^3.10.1",
     "eslint-plugin-babel": "^3.2.0",
+    "eslint-plugin-prettier": "^2.0.1",
     "eslint-plugin-react": "^6.7.1",
     "fetch-mock": "^5.5.0",
     "istanbul": "1.0.0-alpha.2",
     "jest": "^17.0.2",
+    "prettier": "^0.22.0",
     "react-addons-test-utils": "~15.4.2",
     "react-native-mock": "~0.2.5",
     "react-test-renderer": "~15.4.2",

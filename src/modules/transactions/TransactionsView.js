@@ -1,12 +1,13 @@
-import React, { PropTypes, Component } from "react";
-import { Button, View, StyleSheet } from "react-native";
+import React, { Component } from "react";
+import { Button, View, StyleSheet, Text } from "react-native";
 const { func } = React.PropTypes;
 
-import Icon from "react-native-vector-icons/MaterialIcons";
+import { MoneyApi } from "../../utils/MoneyApi";
+// import Icon from "react-native-vector-icons/MaterialIcons";
+
+const moneyApi = new MoneyApi();
 
 class TransactionsView extends Component {
-  // static displayName = "ColorView";
-
   static navigationOptions = {
     title: "Waat",
     tabBar: {
@@ -22,11 +23,19 @@ class TransactionsView extends Component {
   };
 
   state = {
+    loading: false,
     transactions: []
   };
 
   buttonPress() {
-    console.log("moro");
+    // console.log("moro");
+  }
+
+  async componentDidMount() {
+    this.setState({ loading: true });
+    const data = await moneyApi.fetchTransactions();
+    this.setState({ loading: false, transactions: data });
+    console.log(this.state);
   }
 
   render() {

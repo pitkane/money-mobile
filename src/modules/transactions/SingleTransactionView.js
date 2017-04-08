@@ -1,9 +1,9 @@
 import React, { PropTypes, Component } from "react";
 import { Button, View, StyleSheet } from "react-native";
 
-import Icon from "react-native-vector-icons/MaterialIcons";
+// import Icon from "react-native-vector-icons/MaterialIcons";
 
-const color = () => Math.floor(255 * Math.random());
+// const color = () => Math.floor(255 * Math.random());
 
 /**
  * Sample view to demonstrate StackNavigator
