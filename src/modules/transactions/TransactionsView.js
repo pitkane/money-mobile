@@ -27,9 +27,12 @@ class TransactionsView extends Component {
     transactions: []
   };
 
-  buttonPress() {
+  buttonPress = () => {
     // console.log("moro");
-  }
+    console.log(this.props);
+    this.props.navigate({ routeName: "SingleTransactionView" });
+    // this.props.navigate("SingleTransactionView");
+  };
 
   async componentDidMount() {
     this.setState({ loading: true });
